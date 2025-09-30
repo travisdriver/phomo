@@ -10,7 +10,7 @@
 
 #### This is the official repository for [Stereophotoclinometry Revisited](https://arxiv.org/abs/2504.08252), which is currently under review for publication to AIAA's [Journal of Guidance, Control, and Dynamics (JGCD)](https://arc.aiaa.org/loi/jgcd)
 
-**Photoclinometry-from-Motion (PhoMo)** is a framework for _autonomous_ image-based surface reconstruction and characterization of small celestial bodies. PhoMo integrates photoclinometry into a structure-from-motion (SfM) pipeline that leverages deep learning-based keypoint extraction and matching (i.e., [RoMa](https://github.com/Parskatt/RoMa)) to enable _simultaneous_ optimization of the spacecraft pose🛰️, landmark positions, Sun vectors, and surface normals and albedos.
+**Photoclinometry-from-Motion (PhoMo)** is a framework for _autonomous_ image-based surface reconstruction and characterization of small celestial bodies. PhoMo integrates photoclinometry into a structure-from-motion (SfM) pipeline that leverages deep learning-based keypoint extraction and matching (i.e., [RoMa](https://github.com/Parskatt/RoMa)) to enable _simultaneous_ optimization of the spacecraft pose, landmark positions, Sun vectors, and surface normals and albedos.
 
 We are currently working to release the code as soon as possible. Data and results from the paper can be found on our [🤗Hugging Face page](https://huggingface.co/datasets/travisdriver/phomo-data).
 
