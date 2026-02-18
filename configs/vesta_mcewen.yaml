@@ -1,0 +1,46 @@
+runner:
+  _target_: python.runner.PhoMoRunner
+  init_model_path:  # hangled by command line argument 
+  shadow_threshold: 0.025
+  min_landmark_observations: 6
+  emission_angle_threshold: 85.0
+  incidence_angle_threshold: 85.0
+  use_reflectance_factors: True
+  use_smoothness_factors: True
+
+  reflectance_params:
+    _target_: python.reflectance.ReflectanceParams
+    factor_type:
+      _target_: python.reflectance.ReflectanceFactorType
+      value: McEwenFactor2
+    phase_weighting_params: 
+    phase_correction_params: 
+
+  measurement_uncertainties:
+    _target_: python.runner.MeasurementUncertainties
+    sigma_inten: 0.005
+    sigma_sun: 0.001
+    sigma_smooth: 0.2
+    sigma_xy: 1.0
+
+  prior_uncertainties:
+    _target_: python.runner.PriorUncertainties
+    sigma_rot: 1e-4
+    sigma_trans: 1e-2
+    sigma_point3: 1e-2
+    sigma_scale:  
+    sigma_bias: 
+    sigma_phase_weighting_params: 
+    sigma_phase_correction_params: 
+
+viz_options:
+  _target_: python.viz.VizOptions
+  output_path:  # handled by command line argument 
+  ref_image_id: 0
+  albedo_scale_factor: -1  # scale between 0 and 1.
+  albedo_vmin: 0.0
+  albedo_vmax: 1.0
+
+# Global scale factor applied to uncalibrated intensities to approximately align
+# with average magnitude of calibrated intensities.
+render_scale_factor: 50.0

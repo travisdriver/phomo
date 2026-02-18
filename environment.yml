@@ -1,0 +1,22 @@
+name: phomo
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - scipy
+  - matplotlib
+  - hydra-core
+  - pytest
+  - boost
+  - compilers
+  - tbb
+  - tbb-devel
+  - cmake
+  - eigen
+  - pip:
+    - huggingface-hub
+    - pyparsing>=3.2.5
+    - pybind11-stubgen>=2.5.1

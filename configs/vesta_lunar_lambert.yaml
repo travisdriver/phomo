@@ -1,0 +1,42 @@
+runner:
+  _target_: python.runner.PhoMoRunner
+  init_model_path:  # hangled by command line argument 
+  shadow_threshold: 0.025
+  min_landmark_observations: 6
+  emission_angle_threshold: 85.0
+  incidence_angle_threshold: 85.0
+  use_reflectance_factors: True
+  use_smoothness_factors: True
+
+  reflectance_params:
+    _target_: python.reflectance.ReflectanceParams
+    factor_type:
+      _target_: python.reflectance.ReflectanceFactorType
+      value: LunarLambert_AffinePoly4Factor2
+    phase_weighting_params: [0.830, -0.41367552808445435]
+    phase_correction_params: [0.301, -0.2962191800826356, 0.1808826298856471, -0.05887246697891329, 0.007532995454642522]
+
+  measurement_uncertainties:
+    _target_: python.runner.MeasurementUncertainties
+    sigma_inten: 0.005
+    sigma_sun: 0.001
+    sigma_smooth: 0.2
+    sigma_xy: 1.0
+
+  prior_uncertainties:
+    _target_: python.runner.PriorUncertainties
+    sigma_rot: 1e-4
+    sigma_trans: 1e-2
+    sigma_point3: 1e-2
+    sigma_scale: 1e-8
+    sigma_bias: 1e-8
+    sigma_phase_weighting_params: 1e-8
+    sigma_phase_correction_params: 1e-8
+
+viz_options:
+  _target_: python.viz.VizOptions
+  output_path:  # handled by command line argument 
+  ref_image_id: 0
+  albedo_scale_factor: 0.301
+  albedo_vmin: 0.05
+  albedo_vmax: 0.55
